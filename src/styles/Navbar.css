@@ -1,0 +1,14 @@
+.btn-primary {
+    background-color: #0c2340;
+    color: white;
+    align-content: center;
+    
+  }
+
+ .bg-info{
+    background: linear-gradient(to right, rgba(12, 35, 64, 0.5), rgba(201, 105, 0, 0.5));
+ }
+
+ .ms-auto{
+    font-size: 20px;
+ }
