@@ -2,7 +2,6 @@ import React from 'react';
 import ProjectCard from '../components/ProjectCard.jsx'; 
 import projects from '../projects'; 
 import CardGroup from 'react-bootstrap/CardGroup';
-import "../styles/projectCard.css";
 
 
 function Projects (){

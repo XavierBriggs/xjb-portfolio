@@ -1,14 +1,16 @@
-.btn-primary {
-    background-color: #0c2340;
-    color: white;
-    align-content: center;
-    
-  }
-
- .bg-info{
-    background: linear-gradient(to right, rgba(12, 35, 64, 0.5), rgba(201, 105, 0, 0.5));
+.ms-auto{
+    font-size: 1.5rem;
+    color: black;
  }
+/* NavBarOffCanvas.css */
 
- .ms-auto{
-    font-size: 20px;
+/* Smooth transition */
+.navbar {
+   transition: background-color 0.3s ease;
  }
+ 
+ /* Different background color when scrolled */
+ .scrolled {
+   background: linear-gradient(to right, rgba(12, 35, 64), rgba(201, 105, 0));; /* Change to your desired background color */
+ }
+ 

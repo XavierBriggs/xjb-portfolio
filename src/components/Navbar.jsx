@@ -1,15 +1,40 @@
-import React, {useState} from 'react';
+import { faHouse, faPen, faUser, faFile } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function NavBarOffCanvas() {
-  const [underLine, setUnderline] = useState({"textDecoration": "none"});
-  const brand = ""; 
-  function hover(){
-    setUnderline({'textDecoration': "underline"});
+  const [navbarColor, setNavbarColor] = useState("transparent");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 0) {
+        setNavbarColor("scrolled"); // Change to "scrolled" for a different background color
+      } else {
+        setNavbarColor("transparent"); // Change to "transparent" for default background color
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  function hover(event){
+    event.target.style.textDecoration = "underline";
   }
+
+  function unhover(event){
+    event.target.style.textDecoration = "none";
+  }
+
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" sticky="top" className={navbarColor}>
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
@@ -19,15 +44,14 @@ function NavBarOffCanvas() {
             height="75"
             className="d-inline-block align-top"
           />{' '}
-          {brand}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarNavAltMarkup" />
         <Navbar.Collapse id="navbarNavAltMarkup">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/" style={underLine} onMouseOver={hover}>Home</Nav.Link>
-            <Nav.Link as={Link} to="/about" style={underLine} onMouseOver={hover}>About</Nav.Link>
-            <Nav.Link as={Link} to="/projects" style={underLine} onMouseOver={hover}>Projects</Nav.Link>
-            <Nav.Link as={Link} to="/resume" style={underLine} onMouseOver={hover}>Resume</Nav.Link>
+            <Nav.Link as={Link} to="/" onMouseOver={hover} onMouseOut={unhover}><FontAwesomeIcon icon={faHouse} /> Home  </Nav.Link>
+            <Nav.Link as={Link} to="/about" onMouseOver={hover} onMouseOut={unhover}><FontAwesomeIcon icon={faUser} /> About  </Nav.Link>
+            <Nav.Link as={Link} to="/projects" onMouseOver={hover} onMouseOut={unhover}><FontAwesomeIcon icon={faPen} /> Projects </Nav.Link>
+            <Nav.Link as={Link} to="/resume" onMouseOver={hover} onMouseOut={unhover}><FontAwesomeIcon icon={faFile} /> Resume </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
