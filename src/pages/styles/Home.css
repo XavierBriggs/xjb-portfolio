@@ -1,13 +1,13 @@
-.homeMessage{
-    display: grid;
+#homeMessage{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 75px;
+    font-size: 65px;
     text-align: center;
 }
 
 #mainPic{
     width: 300px;
     size: 300px;
-    align-self: center;
+    align-self: right;
+    margin-left: 500px3;
    
 }

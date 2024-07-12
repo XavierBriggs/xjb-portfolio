@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 function NavBarOffCanvas() {
   const [navbarColor, setNavbarColor] = useState("transparent");
 
+  //Handles the navbar changing color on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -25,7 +26,9 @@ function NavBarOffCanvas() {
     };
   }, []);
 
+  //Navbar's Page underLine text hover and undo underline
   function hover(event){
+    console.log(event.target);
     event.target.style.textDecoration = "underline";
   }
 

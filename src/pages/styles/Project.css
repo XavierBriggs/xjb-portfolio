@@ -1,0 +1,36 @@
+.btn-primary {
+    background-color: blue;
+    color: white;
+    align-content: center;
+    
+  }
+
+ .bg-info{
+    background: linear-gradient(to right, rgba(12, 35, 64, 0.5), rgba(201, 105, 0, 0.5));
+ }
+
+ .g-4{
+   margin-inline-start: 90px;
+   margin-top: 50px;
+   padding-bottom: 75px;
+ }
+
+ #project{
+   color: rgba(201, 105, 0);
+   font-style: italic;
+ }
+
+ #ProjectInfo{
+   font-size: 3rem;
+   color: black;
+   font-style: bold;
+   text-align: center;
+   margin-top: 0px;
+   margin-right: 15px;
+ }
+
+ .merriweather-bold {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-style: normal;
+}

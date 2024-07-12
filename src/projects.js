@@ -16,6 +16,18 @@ const projects = [
         title: "Game of Life in C", 
         content: "Created Conway's game of Life in C",
         img: "/imgs/Game of Life.png"
+      },
+      {
+        key: 4,
+        title: "TikTok Follower Bot", 
+        content: "Follower Bot on TikTok",
+        img: "/imgs/Tiktok.png"
+      },
+      {
+        key: 5,
+        title: "TikTok Follower Bot", 
+        content: "Follower Bot on TikTok",
+        img: "/imgs/Tiktok.png"
       }
   ];
   

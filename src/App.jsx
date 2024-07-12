@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
 import './styles/App.css';
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               />
               <Route path="/Resume" element={<Resume />} />
           </Routes>
+          <Footer />
       </Router>
   );
 }
