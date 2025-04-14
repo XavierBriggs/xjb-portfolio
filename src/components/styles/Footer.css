@@ -1,39 +1,86 @@
-body {
-    position: relative;
-    min-height: 100vh;
-    margin: 0;
-    padding-bottom: 100px;
-    /* Give space for the footer */
+/* src/components/Footer/styles/Footer.css */
+
+.footer-container {
+  background-color: rgba(10, 25, 47, 0.95); /* Very dark blue, slightly transparent */
+  /* Match your navbar's scrolled background or choose a footer color */
+  /* background-color: rgba(12, 35, 64, 0.95); */
+
+  padding: 1rem 5%; /* Vertical and horizontal padding */
+  color: rgba(255, 255, 255, 0.7); /* Light grey text */
+  display: flex;
+  justify-content: space-between; /* Space out the columns */
+  align-items: center; /* Vertically align items */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  padding: 0.5rem 1rem; /* Add some spacing around content */
+  text-align: center; /* Center text within columns */
+}
+
+/* Adjust flex basis for responsiveness if needed */
+.footer-left {
+  flex-basis: auto; /* Adjust as needed */
+}
+.footer-center {
+  flex-basis: auto;
+}
+.footer-right {
+  flex-basis: auto;
+}
+
+
+.footer-social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Align icons horizontally */
+  align-items: center;
+}
+
+.footer-social-links li {
+  margin: 0 0.6rem; /* Spacing between icons */
+}
+
+.social-icon-link {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  display: inline-block; /* Needed for transform */
+}
+
+.social-icon-link:hover {
+  color: #dab031; /* Purple accent on hover - adjust as needed */
+  /* Or use orange: #C96900; */
+  transform: scale(1.2); /* Slightly enlarge icon on hover */
+}
+
+
+/* Media Query for smaller screens - stack the columns */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack columns vertically */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
-  
-  #FooterNav {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    list-style-type: none;
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    width: 100%; /* Make each section take full width */
     text-align: center;
-    padding: 15px 15px 10px 15px; /* Add some padding for better appearance */
+    padding: 0.5rem 0; /* Adjust padding for stacked layout */
   }
-  
-  .FooterItems {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px; /* Add right margin to balance spacing */
-    vertical-align: middle;
-    color: rgba(8, 47, 94);
+
+  .footer-right {
+    margin-top: 0.5rem; /* Add space above social links */
+    justify-content: center; /* Center icons when stacked */
   }
-  
-  h3 {
-    text-align: center;
-    margin-right: 10px;
-    color: rgba(201, 105, 0, 0.8);
-    font-size: x-large;
-    font-family: fantasy;
+
+  .footer-social-links {
+    justify-content: center; /* Center icons horizontally */
   }
-  
-  #copyright {
-    padding-top: 10px;
-    font-size: x-small;
-  }
-  
+}

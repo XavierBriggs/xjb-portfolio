@@ -1,3 +1,14 @@
-body {
-    background: linear-gradient(to right, rgba(12, 35, 64, 0.5), rgba(201, 105, 0, 0.5));
-}
+/* In src/index.css OR src/App.css */
+:root {
+    --nd-blue: #123663;
+    --nd-gold: #c99700;
+    --nd-white: #ffffff;
+    --nd-text-light: rgba(255, 255, 255, 0.85);
+    /* Add others if needed */
+  }
+  
+  body {
+     background-color: var(--nd-blue); /* Example applying variable */
+     color: var(--nd-text-light);
+     /* ... other body styles */
+  }

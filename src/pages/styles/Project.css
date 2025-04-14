@@ -10,11 +10,14 @@
  }
 
  .g-4{
-   margin-inline-start: 90px;
    margin-top: 50px;
    padding-bottom: 75px;
+   
  }
 
+  .center{
+    justify-content: center;
+  }
  #project{
    color: rgba(201, 105, 0);
    font-style: italic;
@@ -33,4 +36,9 @@
   font-family: "Merriweather", serif;
   font-weight: 700;
   font-style: normal;
+}
+
+#projectButton{
+  text-decoration: none;
+  color: white;
 }

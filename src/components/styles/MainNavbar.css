@@ -1,0 +1,74 @@
+/* src/components/Navbar/styles/MainNavbar.css */
+
+.main-navbar {
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  background-color: transparent !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid transparent;
+}
+
+.main-navbar.scrolled {
+  background-color: rgba(12, 35, 64, 0.95) !important; /* Slightly transparent ND Blue */
+  /* OR Solid: background-color: var(--nd-blue) !important; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(201, 151, 0, 0.2); /* Subtle ND Gold border */
+}
+
+.navbar-brand-logo img {
+  max-height: 45px;
+  width: auto;
+  border-radius: 50%; /* Optional */
+}
+
+.main-navbar .nav-link {
+  color: var(--nd-text-light) !important; /* Use variable */
+  font-weight: 500;
+  padding: 0.5rem 0.8rem !important;
+  margin: 0 0.3rem;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.main-navbar .nav-link svg {
+  margin-right: 8px;
+  font-size: 1.05em;
+}
+
+.main-navbar .nav-link:hover {
+  color: var(--nd-white) !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-navbar .nav-link.active {
+  color: var(--nd-gold) !important; /* Use ND Gold */
+  font-weight: bold;
+  background-color: rgba(201, 151, 0, 0.1) !important; /* Subtle ND Gold background */
+}
+
+.main-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.main-navbar .navbar-toggler:focus {
+   box-shadow: 0 0 0 0.2rem rgba(201, 151, 0, 0.25); /* ND Gold focus outline */
+}
+
+.main-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important; /* White lines */
+}
+
+@media (max-width: 767.98px) {
+  .main-navbar .navbar-collapse {
+    background-color: var(--nd-blue); /* Solid ND Blue */
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+   .main-navbar .nav-link.active {
+     background-color: rgba(201, 151, 0, 0.15) !important; /* Subtle ND Gold background */
+   }
+}

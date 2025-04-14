@@ -14,15 +14,16 @@ function Projects (){
             key={project.key} 
             title={project.title} 
             content={project.content} 
-            img={project.img} 
+            img={project.img}
+            url={project.url}
           />
         );
       }
       
       return (
         <div className="Projects">   
-        <h2 id='ProjectInfo' className='merriweather-bold'>Here are some of my recent <span className="merriweather-bold "id='project'>Projects</span></h2>  
-      <Row xs="auto" sm="auto" md="auto" lg="auto" className="g-4">
+        <h2 id='ProjectInfo' className= "center merriweather-bold" >Here are some of my recent <span className="merriweather-bold "id='project'>Projects</span></h2>  
+      <Row xs="auto" sm="auto" md="auto" lg="auto" className="g-4 center">
       {projects.map(createCard)}
       </Row>
         </div>

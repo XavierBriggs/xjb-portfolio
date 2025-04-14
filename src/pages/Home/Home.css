@@ -1,0 +1,269 @@
+/* Combined styles for Home and Home2 sections - e.g., save as Home.css */
+
+/* ============================ */
+/* Styles for Home Component    */
+/* (Hero Section)              */
+/* ============================ */
+
+/* --- Base Section Styles --- */
+.homeSection {
+  position: relative;
+  min-height: 100vh; /* Ensure it takes full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--nd-white); /* Use ND White for default text */
+  overflow: hidden;
+}
+
+/* Container for the main hero content */
+.homeContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  gap: 2rem;
+  z-index: 1; /* Ensure content is above particles */
+}
+
+/* --- Text Column Styles --- */
+.homeText {
+  flex: 1;
+  max-width: 600px;
+}
+
+.heading,
+.headingName {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding-bottom: 0.8rem;
+  color: var(--nd-white); /* Ensure headings are white */
+}
+
+.headingName {
+  font-size: 2.8rem;
+}
+
+.mainName {
+  color: var(--nd-gold); /* Use ND Gold for name highlight */
+}
+
+/* --- Waving Hand Animation --- */
+.wave {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 2.2rem;
+  margin-left: 5px;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(0.0deg) }
+  10% { transform: rotate(14.0deg) }
+  20% { transform: rotate(-8.0deg) }
+  30% { transform: rotate(14.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate(10.0deg) }
+  60% { transform: rotate(0.0deg) }
+  100% { transform: rotate(0.0deg) }
+}
+
+/* --- Subheading / Typewriter --- */
+.subheading { /* This class likely styles the container div in Home.jsx */
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--nd-gold); /* Use ND Gold for typewriter text */
+  min-height: 2.5em;
+  margin-top: 1rem;
+}
+
+/* --- Illustration Column Styles --- */
+.homeIllustration {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+.illustrationImg {
+  max-width: 100%;
+  height: auto;
+  max-height: 450px;
+}
+
+/* ============================ */
+/* Styles for Home2 Component   */
+/* (About / Socials Section)    */
+/* ============================ */
+.home-about-section {
+  position: relative;
+  padding: 80px 5%; /* Use percentage for horizontal padding */
+  /* Inherits background from body or parent, assuming it's --nd-blue */
+  color: var(--nd-text-light); /* Use light text variable */
+  /* Optional border */
+  /* border-top: 1px solid rgba(201, 151, 0, 0.2); */
+}
+
+.home-about-row { /* Bootstrap Row used inside Home2 */
+  justify-content: center;
+  align-items: center;
+}
+
+.home-about-description { /* Bootstrap Col used inside Home2 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.home-about-heading {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: var(--nd-white); /* Use white for heading */
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.gold-text { /* Specific class for gold text spans */
+  color: var(--nd-gold);
+}
+
+.highlight { /* Class for highlighted keywords */
+  color: var(--nd-gold); /* Use ND Gold */
+  font-weight: 600;
+  font-style: normal; /* Override default italic if using <i> */
+}
+/* Style parent <i> tag if used */
+.home-about-body i {
+   font-style: normal;
+}
+
+.home-about-body {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: left;
+  padding-right: 20px;
+}
+
+.myAvtar { /* Bootstrap Col used inside Home2 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.avatar-image-custom { /* Class applied to the react-bootstrap Image */
+  max-width: 280px;
+  height: auto;
+  border: 6px solid var(--nd-gold); /* Use ND Gold for border */
+}
+
+/* --- Social Links Section --- */
+.home-socials-row { /* Bootstrap Row used inside Home2 */
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.home-about-social { /* Bootstrap Col used inside Home2 */
+  text-align: center;
+}
+.home-about-social h1 {
+  font-size: 2.2rem;
+  color: var(--nd-white); /* Use white for heading */
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+.home-about-social p {
+  font-size: 1.1rem;
+  color: var(--nd-text-light); /* Use light text variable */
+  margin-bottom: 2rem;
+}
+
+.home-about-social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 1.8rem;
+}
+
+.social-icons { /* li element */
+  display: inline-block;
+}
+
+.home-social-icons { /* a element */
+  display: inline-block;
+  color: var(--nd-white); /* Use white icons */
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--nd-white); /* Use white border */
+  transition: all 0.3s ease-in-out;
+  line-height: 1;
+}
+
+.home-social-icons:hover {
+  color: var(--nd-gold); /* Use ND Gold on hover */
+  transform: translateY(-5px) scale(1.1);
+  border-color: var(--nd-gold); /* Use ND Gold border */
+  box-shadow: 0 5px 15px rgba(201, 151, 0, 0.3); /* ND Gold glow */
+}
+
+
+/* ============================ */
+/* Responsive Adjustments       */
+/* ============================ */
+
+/* --- Hero Section Responsiveness --- */
+@media (max-width: 992px) {
+  .homeContent { flex-direction: column; text-align: center; }
+  .homeText { order: 2; max-width: 100%; }
+  .homeIllustration { order: 1; margin-bottom: 2rem; max-width: 350px; }
+  .heading, .headingName { font-size: 2rem; }
+  .headingName { font-size: 2.2rem; }
+  .subheading { font-size: 1.5rem; }
+}
+
+/* --- About/Socials Section Responsiveness --- */
+@media (max-width: 991px) { /* Using slightly different breakpoint from original */
+   .home-about-row { flex-direction: column; }
+   .home-about-description { order: 2; text-align: center; padding-right: 0; }
+   .home-about-body { text-align: left; }
+   .myAvtar { order: 1; margin-bottom: 30px; }
+   .avatar-image-custom { max-width: 220px; }
+   .home-about-heading { font-size: 2.2rem; }
+}
+
+@media (max-width: 576px) {
+  .home-about-section { padding: 60px 5%; } /* Add horizontal padding */
+  .home-about-heading { font-size: 1.9rem; }
+  .avatar-image-custom { max-width: 180px; }
+  .home-about-body { font-size: 1rem; }
+  .home-about-social h1 { font-size: 1.8rem; }
+  .home-about-social-links { gap: 1.2rem; }
+  .home-social-icons { font-size: 1.6rem; padding: 8px; }
+}
+
+/* ============================ */
+/* Animations (Ensure defined once) */
+/* ============================ */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Optional: Add animation to text column */
+/*
+.homeText {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+*/

@@ -14,7 +14,7 @@ function ProjectCard(props) {
         <Card.Text>
           {props.content}
         </Card.Text>
-        <Button variant="primary" className='Project'>Click Me!</Button>
+        <Button variant="primary" className='Project' href={props.url}>Click Me!</Button>
       </Card.Body>
     </Card>
     </Col>

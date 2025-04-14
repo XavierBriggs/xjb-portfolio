@@ -1,60 +1,81 @@
-import { faHouse, faPen, faUser, faFile } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// src/components/Navbar/MainNavbar.js
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom'; // Import NavLink and Link
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// CORRECTED Imports
+import { faHouse, faUser, faCode, faFileAlt } from '@fortawesome/free-solid-svg-icons'; // Solid icons
+import { faGithub } from '@fortawesome/free-brands-svg-icons'; // Brand icons
+import './styles/MainNavbar.css'; // Import the CSS file for styling - Adjust path if needed
+import Particle from './Particle';
 
-function NavBarOffCanvas() {
-  const [navbarColor, setNavbarColor] = useState("transparent");
+function MainNavbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  //Handles the navbar changing color on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > 0) {
-        setNavbarColor("scrolled"); // Change to "scrolled" for a different background color
-      } else {
-        setNavbarColor("transparent"); // Change to "transparent" for default background color
-      }
+      setIsScrolled(window.scrollY > 10); // Add .scrolled class after scrolling 10px
     };
-
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  //Navbar's Page underLine text hover and undo underline
-  function hover(event){
-    console.log(event.target);
-    event.target.style.textDecoration = "underline";
-  }
-
-  function unhover(event){
-    event.target.style.textDecoration = "none";
-  }
-
   return (
-    <Navbar expand="lg" sticky="top" className={navbarColor}>
+    <Navbar
+        expand="md" // Collapse below medium screens
+        sticky="top"
+        // Changed variant to "dark" for better defaults with light text, though CSS overrides most things
+        variant="dark"
+        className={`main-navbar ${isScrolled ? 'scrolled' : ''}`} // Base class + conditional scrolled class
+        >
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        {/* Brand Logo */}
+        <Navbar.Brand as={Link} to="/" className="navbar-brand-logo">
           <img
-            alt=""
+            alt="XB Logo"
+            // *** Verify this path is correct for your project ***
             src="/imgs/XB-Logo.jpg"
-            width="75"
-            height="75"
+            width="50" // Slightly smaller logo
+            height="50"
             className="d-inline-block align-top"
-          />{' '}
+          />
+          {/* Optional: <span className="ms-2">Xavier Briggs</span> */}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarNavAltMarkup" />
-        <Navbar.Collapse id="navbarNavAltMarkup">
-          <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/" onMouseOver={hover} onMouseOut={unhover}><FontAwesomeIcon icon={faHouse} /> Home  </Nav.Link>
-            <Nav.Link as={Link} to="/about" onMouseOver={hover} onMouseOut={unhover}><FontAwesomeIcon icon={faUser} /> About  </Nav.Link>
-            <Nav.Link as={Link} to="/projects" onMouseOver={hover} onMouseOut={unhover}><FontAwesomeIcon icon={faPen} /> Projects </Nav.Link>
-            <Nav.Link as={Link} to="/resume" onMouseOver={hover} onMouseOut={unhover}><FontAwesomeIcon icon={faFile} /> Resume </Nav.Link>
+
+        {/* Hamburger Toggle Button */}
+        <Navbar.Toggle aria-controls="main-navbar-nav" />
+
+        {/* Collapsible Navbar Content */}
+        <Navbar.Collapse id="main-navbar-nav">
+          {/* ms-auto pushes nav items to the right */}
+          <Nav className="ms-auto align-items-center">
+            {/* Navigation Links using NavLink for active class */}
+            <Nav.Link as={NavLink} to="/" end> {/* 'end' prop for exact match on home */}
+                <FontAwesomeIcon icon={faHouse} className="me-2" /> Home
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/about">
+                <FontAwesomeIcon icon={faUser} className="me-2" /> About
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/projects">
+                <FontAwesomeIcon icon={faCode} className="me-2" /> Projects {/* Changed icon */}
+            </Nav.Link>
+            {/* Example: Direct link to a resume PDF */}
+            <Nav.Link href="/path-to-your-resume.pdf" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faFileAlt} className="me-2" /> Resume {/* Changed icon */}
+            </Nav.Link>
+
+            {/* Optional: GitHub Link */}
+            <Nav.Link
+              href="https://github.com/xavierbriggs" // *** Replace with your GitHub URL ***
+              target="_blank"
+              rel="noopener noreferrer"
+              className="d-flex align-items-center" // Ensure vertical alignment
+              title="GitHub Profile" // Tooltip for accessibility
+            >
+                <FontAwesomeIcon icon={faGithub} size="lg"/> {/* Adjust size if needed */}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -62,4 +83,4 @@ function NavBarOffCanvas() {
   );
 }
 
-export default NavBarOffCanvas;
+export default MainNavbar;
