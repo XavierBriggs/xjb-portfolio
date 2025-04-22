@@ -21,13 +21,15 @@ function Particle() {
 
   // Particle Configuration Options
   const particleOptions = {
-    // background: {
-    //   color: {
-    //     value: "var(--nd-blue)", // Set background here OR rely on parent container's background
-    //   },
-    // },
+    background: {
+      color: {
+        value: "var(--nd-blue)", // Using the Notre Dame blue from your CSS variables
+      },
+      opacity: 1,
+    },
     fullScreen: {
-        enable: true // Set to false - particles will be bound to the container element
+        enable: true, // Keep this true to make particles cover the entire viewport
+        zIndex: -1 // Ensure particles stay behind all other content
     },
     fpsLimit: 60, // Lower FPS limit for better performance if needed
     interactivity: {
@@ -101,8 +103,13 @@ function Particle() {
     },
     detectRetina: true, // Improves rendering on high-DPI screens
     style: { // Ensure particles are behind other content
-        position: 'absolute', // Position absolutely within the container
-        // zIndex: -1 // Send particles behind other elements in the container
+        position: 'fixed', // Position fixed to stay in viewport during scrolling
+        zIndex: -1, // Send particles behind other elements
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none' // Allow clicks to pass through to elements below
     }
   };
 

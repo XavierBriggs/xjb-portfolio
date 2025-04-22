@@ -61,8 +61,8 @@ function MainNavbar() {
             <Nav.Link as={NavLink} to="/projects">
                 <FontAwesomeIcon icon={faCode} className="me-2" /> Projects {/* Changed icon */}
             </Nav.Link>
-            {/* Example: Direct link to a resume PDF */}
-            <Nav.Link href="/path-to-your-resume.pdf" target="_blank" rel="noopener noreferrer">
+            {/* Resume page link */}
+            <Nav.Link as={NavLink} to="/Resume">
                 <FontAwesomeIcon icon={faFileAlt} className="me-2" /> Resume {/* Changed icon */}
             </Nav.Link>
 

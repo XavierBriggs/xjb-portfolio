@@ -10,7 +10,7 @@ import {
 } from 'react-icons/si';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketballBall, faGamepad, faDog } from '@fortawesome/free-solid-svg-icons';
-import Particle from "../components/Particle";
+// Particle component is now in App.jsx and applies to all pages
 
 import './styles/About.css'; // Make sure this path matches your project
 
@@ -41,14 +41,13 @@ function About() {
 
   return (
     <Container fluid className="about-page-section" id="about">
-    <Particle />
       <Container>
         {/* --- Introduction Row --- */}
         <Row className="about-content-row">
           {/* Text Column */}
           <Col md={7} className="about-description">
             <h1 className="about-heading">
-              Know Who <span className="gold-text">I'M</span>
+              Know Who <span className="gold-text">I AM</span>
             </h1>
             <Card className="quote-card">
               <Card.Body>

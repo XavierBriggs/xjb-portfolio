@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import avatarImg from '/imgs/xjb-port.jpg';
 import "./Home.css";
-import Particle from "../../components/Particle";
+// Particle component is now in App.jsx and applies to all pages
 
 function Home2() {
   const Highlight = ({ children }) => <i className="highlight">{children}</i>;

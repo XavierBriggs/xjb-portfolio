@@ -9,7 +9,7 @@ function Resume() {
                 <Card bg="dark" border="secondary" style={{ height: "35rem", width: '25rem', textAlign: 'center',paddingBottom: "50px" }}>
                     <Card.Img variant="top" src="/imgs/XJB-Resume.png" className="ResumeCard" style={{ height: "30rem",paddingBottom: "50px" }} />
                     <Card.Body className="ResumeCard" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: "50px"}}>
-                    <a href="/imgs/Xavier Briggs Resume.pdf" download><Button className="ResumeCard" variant="primary">Download</Button></a>
+                    <a href="/Xavier Briggs Master Resume.pdf" download="Xavier Briggs Master Resume.pdf"><Button className="ResumeCard" variant="primary">Download Resume</Button></a>
                     </Card.Body>
                 </Card>
             </Col>

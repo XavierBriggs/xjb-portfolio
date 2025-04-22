@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 // If using the xjb-port.jpg, ensure path is correct.
 // If using an SVG like the original, place it in Assets and update path.
 import homeLogo from "/imgs/WMP_Gh.png"; // KEEP or CHANGE path/filename
-import Particle from "../components/Particle"; // You need this component for the background
+// Particle component is now in App.jsx and applies to all pages
 import Home2 from "./Home/Home2"; // This contains the About/Socials sections
 import Type from "../components/Type"; // This handles the typewriter effect
 
@@ -16,8 +16,7 @@ function Home() {
     <section>
       {/* Main Hero Section Container */}
       <Container fluid className="homeSection" id="home">
-        {/* Particle background effect */}
-        <Particle />
+        {/* Particle background effect is now in App.jsx */}
         <Container className="homeContent">
           <Row>
             {/* Left Text Column */}
@@ -47,7 +46,7 @@ function Home() {
               <img
                 src={homeLogo} // Using the variable imported above
                 alt="home pic"
-                className="img-fluid" // Bootstrap class for responsiveness
+                className="illustrationImg" // Bootstrap class for responsiveness
                 style={{ maxHeight: "450px" }}
               />
             </Col>

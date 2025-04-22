@@ -1,33 +1,39 @@
 import React from 'react';
-import ProjectCard from '../components/ProjectCard.jsx'; 
-import projects from '../projects'; 
-import CardGroup from 'react-bootstrap/CardGroup';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import ProjectCard from '../components/ProjectCard.jsx';
+import projects from '../projects';
+import { Container, Row, Col } from 'react-bootstrap';
 
+function Projects() {
+  return (
+    <section className="projects-section">
+      <Container>
+        <Row className="mb-5">
+          <Col lg={12} className="text-center">
+            <h1 className="projects-heading">
+              My Recent <span className="highlight-text">Projects</span>
+            </h1>
+            <p className="projects-subtitle">
+              Here's a collection of my recent work
+            </p>
+          </Col>
+        </Row>
 
-
-function Projects (){
-    function createCard(project) {
-        return (
-          <ProjectCard 
-            key={project.key} 
-            title={project.title} 
-            content={project.content} 
-            img={project.img}
-            url={project.url}
-          />
-        );
-      }
-      
-      return (
-        <div className="Projects">   
-        <h2 id='ProjectInfo' className= "center merriweather-bold" >Here are some of my recent <span className="merriweather-bold "id='project'>Projects</span></h2>  
-      <Row xs="auto" sm="auto" md="auto" lg="auto" className="g-4 center">
-      {projects.map(createCard)}
-      </Row>
-        </div>
-      );
+        <Row className="project-card-container">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.key}
+              title={project.title}
+              content={project.content}
+              img={project.img}
+              url={project.url}
+              demoUrl={project.demoUrl}
+              technologies={project.technologies}
+            />
+          ))}
+        </Row>
+      </Container>
+    </section>
+  );
 }
 
 export default Projects;
