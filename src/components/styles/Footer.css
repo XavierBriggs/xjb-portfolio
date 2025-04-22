@@ -1,86 +1,66 @@
 /* src/components/Footer/styles/Footer.css */
 
 .footer-container {
-  background-color: rgba(10, 25, 47, 0.95); /* Very dark blue, slightly transparent */
-  /* Match your navbar's scrolled background or choose a footer color */
-  /* background-color: rgba(12, 35, 64, 0.95); */
-
-  padding: 1rem 5%; /* Vertical and horizontal padding */
-  color: rgba(255, 255, 255, 0.7); /* Light grey text */
+  background-color: rgba(10, 25, 47, 0.95);
+  padding: 1rem 5%;
+  color: rgba(255, 255, 255, 0.7);
   display: flex;
-  justify-content: space-between; /* Space out the columns */
-  align-items: center; /* Vertically align items */
-  flex-wrap: wrap; /* Allow wrapping on small screens */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-left,
 .footer-center,
 .footer-right {
-  padding: 0.5rem 1rem; /* Add some spacing around content */
-  text-align: center; /* Center text within columns */
-}
-
-/* Adjust flex basis for responsiveness if needed */
-.footer-left {
-  flex-basis: auto; /* Adjust as needed */
-}
-.footer-center {
+  padding: 0.5rem 1rem;
+  text-align: center;
   flex-basis: auto;
 }
-.footer-right {
-  flex-basis: auto;
-}
-
 
 .footer-social-links {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* Align icons horizontally */
+  display: flex;
   align-items: center;
 }
 
 .footer-social-links li {
-  margin: 0 0.6rem; /* Spacing between icons */
+  margin: 0 0.6rem;
 }
 
 .social-icon-link {
   color: rgba(255, 255, 255, 0.7);
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  display: inline-block; /* Needed for transform */
+  display: inline-block;
 }
 
 .social-icon-link:hover {
-  color: #dab031; /* Purple accent on hover - adjust as needed */
-  /* Or use orange: #C96900; */
-  transform: scale(1.2); /* Slightly enlarge icon on hover */
+  color: #dab031;
+  transform: scale(1.2);
 }
 
-
-/* Media Query for smaller screens - stack the columns */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column; /* Stack columns vertically */
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    flex-direction: column;
+    padding: 1.5rem 5%;
   }
 
   .footer-left,
   .footer-center,
   .footer-right {
-    width: 100%; /* Make each section take full width */
-    text-align: center;
-    padding: 0.5rem 0; /* Adjust padding for stacked layout */
+    width: 100%;
+    padding: 0.5rem 0;
   }
 
   .footer-right {
-    margin-top: 0.5rem; /* Add space above social links */
-    justify-content: center; /* Center icons when stacked */
+    margin-top: 0.5rem;
   }
 
   .footer-social-links {
-    justify-content: center; /* Center icons horizontally */
+    justify-content: center;
   }
 }

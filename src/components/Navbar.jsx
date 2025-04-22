@@ -1,13 +1,10 @@
-// src/components/Navbar/MainNavbar.js
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { NavLink, Link } from 'react-router-dom'; // Import NavLink and Link
+import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// CORRECTED Imports
-import { faHouse, faUser, faCode, faFileAlt } from '@fortawesome/free-solid-svg-icons'; // Solid icons
-import { faGithub } from '@fortawesome/free-brands-svg-icons'; // Brand icons
-import './styles/MainNavbar.css'; // Import the CSS file for styling - Adjust path if needed
-import Particle from './Particle';
+import { faHouse, faUser, faCode, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import './styles/MainNavbar.css';
 
 function MainNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,57 +21,44 @@ function MainNavbar() {
 
   return (
     <Navbar
-        expand="md" // Collapse below medium screens
+        expand="md"
         sticky="top"
-        // Changed variant to "dark" for better defaults with light text, though CSS overrides most things
         variant="dark"
-        className={`main-navbar ${isScrolled ? 'scrolled' : ''}`} // Base class + conditional scrolled class
+        className={`main-navbar ${isScrolled ? 'scrolled' : ''}`}
         >
       <Container>
-        {/* Brand Logo */}
         <Navbar.Brand as={Link} to="/" className="navbar-brand-logo">
           <img
             alt="XB Logo"
-            // *** Verify this path is correct for your project ***
             src="/imgs/XB-Logo.jpg"
-            width="50" // Slightly smaller logo
+            width="50"
             height="50"
             className="d-inline-block align-top"
           />
-          {/* Optional: <span className="ms-2">Xavier Briggs</span> */}
         </Navbar.Brand>
 
-        {/* Hamburger Toggle Button */}
         <Navbar.Toggle aria-controls="main-navbar-nav" />
 
-        {/* Collapsible Navbar Content */}
         <Navbar.Collapse id="main-navbar-nav">
-          {/* ms-auto pushes nav items to the right */}
           <Nav className="ms-auto align-items-center">
-            {/* Navigation Links using NavLink for active class */}
-            <Nav.Link as={NavLink} to="/" end> {/* 'end' prop for exact match on home */}
+            <Nav.Link as={NavLink} to="/" end>
                 <FontAwesomeIcon icon={faHouse} className="me-2" /> Home
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/about">
-                <FontAwesomeIcon icon={faUser} className="me-2" /> About
-            </Nav.Link>
             <Nav.Link as={NavLink} to="/projects">
-                <FontAwesomeIcon icon={faCode} className="me-2" /> Projects {/* Changed icon */}
+                <FontAwesomeIcon icon={faCode} className="me-2" /> Projects
             </Nav.Link>
-            {/* Resume page link */}
             <Nav.Link as={NavLink} to="/Resume">
-                <FontAwesomeIcon icon={faFileAlt} className="me-2" /> Resume {/* Changed icon */}
+                <FontAwesomeIcon icon={faFileAlt} className="me-2" /> Resume
             </Nav.Link>
 
-            {/* Optional: GitHub Link */}
             <Nav.Link
-              href="https://github.com/xavierbriggs" // *** Replace with your GitHub URL ***
+              href="https://github.com/xavierbriggs"
               target="_blank"
               rel="noopener noreferrer"
-              className="d-flex align-items-center" // Ensure vertical alignment
-              title="GitHub Profile" // Tooltip for accessibility
+              className="d-flex align-items-center"
+              title="GitHub Profile"
             >
-                <FontAwesomeIcon icon={faGithub} size="lg"/> {/* Adjust size if needed */}
+                <FontAwesomeIcon icon={faGithub} size="lg"/>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

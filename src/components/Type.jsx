@@ -1,4 +1,3 @@
-// src/components/Type.js
 import React from "react";
 import Typewriter from "typewriter-effect";
 
@@ -6,11 +5,11 @@ function Type() {
   return (
     <Typewriter
       options={{
-        // Strings relevant to you (Xavier Briggs)
         strings: [
           "Passionate Developer",
           "Ethical Builder",
-          "Artificial Intelligence Enthusiast",
+          "Basketball Lover",
+          "Dog Dad",
           "Loves Empowering Others",
         ],
         autoStart: true, // Start typing automatically

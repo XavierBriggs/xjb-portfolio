@@ -8,7 +8,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 function ProjectCard(props) {
-  // Check if URL is GitHub
   const isGithub = props.url && props.url.includes('github.com');
   
   return (
@@ -33,12 +32,12 @@ function ProjectCard(props) {
             {props.url ? (
               <Button 
                 variant="outline-primary" 
-                className='project-btn' 
+                className="project-btn" 
                 href={props.url} 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <FontAwesomeIcon icon={isGithub ? faGithub : faLink} className="me-2" />
+                <FontAwesomeIcon icon={isGithub ? faGithub : faExternalLinkAlt} className="me-2" />
                 {isGithub ? 'View Code' : 'View Project'}
               </Button>
             ) : (
@@ -48,12 +47,12 @@ function ProjectCard(props) {
             {props.demoUrl && (
               <Button 
                 variant="outline-success" 
-                className='project-btn' 
+                className="project-btn" 
                 href={props.demoUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <FontAwesomeIcon icon={faLink} className="me-2" />
+                <FontAwesomeIcon icon={faExternalLinkAlt} className="me-2" />
                 Live Demo
               </Button>
             )}
@@ -61,9 +60,7 @@ function ProjectCard(props) {
         </Card.Body>
       </Card>
     </Col>
-
   );
 };
-
 
 export default ProjectCard;

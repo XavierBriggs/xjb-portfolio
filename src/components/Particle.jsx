@@ -1,93 +1,76 @@
-// src/components/Particle.js
 import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim"; // Loads the slim engine
-// If you need more features later, use: import { loadFull } from "tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 function Particle() {
-  // Memoize the init function
   const particlesInit = useCallback(async (engine) => {
-    console.log("Particles engine starting...");
-    // Initializes the tsParticles instance (engine) here, adding custom shapes or presets
-    // You can load the slim preset bundle or create your own config
     await loadSlim(engine);
-    console.log("Particles engine loaded.");
   }, []);
 
-  // Optional: Memoize the loaded function if needed
-  const particlesLoaded = useCallback(async (container) => {
-    console.log("Particles container loaded:", container);
-  }, []);
+  const particlesLoaded = useCallback(async () => {}, []);
 
-  // Particle Configuration Options
   const particleOptions = {
     background: {
       color: {
-        value: "var(--nd-blue)", // Using the Notre Dame blue from your CSS variables
+        value: "var(--nd-blue)"
       },
-      opacity: 1,
+      opacity: 0,
     },
     fullScreen: {
-        enable: true, // Keep this true to make particles cover the entire viewport
-        zIndex: -1 // Ensure particles stay behind all other content
+        enable: true,
+        zIndex: 0
     },
-    fpsLimit: 60, // Lower FPS limit for better performance if needed
+    fpsLimit: 60,
     interactivity: {
       events: {
         onHover: {
           enable: true,
-          mode: "repulse", // Push particles away on hover
+          mode: "repulse",
         },
         onClick: {
           enable: true,
-          mode: "push", // Add particles on click
+          mode: "push",
         },
         resize: true,
       },
       modes: {
         push: {
-          quantity: 2, // Number of particles added on click
+          quantity: 2,
         },
         repulse: {
-          distance: 150, // How far particles are pushed
+          distance: 150,
           duration: 0.4,
         },
       },
     },
     particles: {
       color: {
-        value: "#ffffff", // Particle color (ND White)
+        value: "#ffffff",
       },
-    //   links: { // Optional: lines connecting particles
-    //     color: "#ffffff",
-    //     distance: 150,
-    //     enable: true,
-    //     opacity: 0.3,
-    //     width: 1,
-    //   },
+
       collisions: {
-          enable: false, // Disable collisions for smoother flow
+          enable: false,
       },
       move: {
         direction: "none",
         enable: true,
         outModes: {
-          default: "out", // Particles leave the canvas edges
+          default: "out",
         },
-        random: true, // Random movement direction
-        speed: 0.5, // Movement speed (adjust as desired)
-        straight: false, // Particles move in non-straight paths
+        random: true,
+        speed: 0.5,
+        straight: false,
       },
       number: {
         density: {
           enable: true,
-          area: 800, // Adjust density based on container size
+          area: 800,
         },
-        value: 80, // Base number of particles
+        value: 80,
       },
       opacity: {
-        value: { min: 0.1, max: 0.5 }, // Random opacity
-         animation: { // Optional: fading animation
+        value: { min: 0.1, max: 0.5 },
+         animation: {
              enable: true,
              speed: 0.5,
              sync: false,
@@ -95,34 +78,31 @@ function Particle() {
          }
       },
       shape: {
-        type: "circle", // Particle shape
+        type: "circle",
       },
       size: {
-        value: { min: 1, max: 3 }, // Random particle size
+        value: { min: 1, max: 3 },
       },
     },
-    detectRetina: true, // Improves rendering on high-DPI screens
-    style: { // Ensure particles are behind other content
-        position: 'fixed', // Position fixed to stay in viewport during scrolling
-        zIndex: -1, // Send particles behind other elements
+    detectRetina: true,
+    style: {
+        position: 'fixed',
+        zIndex: -1,
         top: 0,
         left: 0,
         width: '100%',
         height: '100%',
-        pointerEvents: 'none' // Allow clicks to pass through to elements below
+        pointerEvents: 'none'
     }
   };
 
   return (
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={particleOptions}
-        // Optional: Add className for further CSS targeting
-        // className="particle-canvas"
-        // Height and width are controlled by the container element
-      />
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      loaded={particlesLoaded}
+      options={particleOptions}
+    />
   );
 }
 

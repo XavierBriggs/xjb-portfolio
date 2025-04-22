@@ -1,255 +1,301 @@
-/* Example Path: src/pages/styles/About.css */
+/* ===========================
+   ABOUT PAGE STYLES
+   =========================== */
 
-/* ============================ */
-/* General About Page Styles    */
-/* ============================ */
+/* Main container */
 .about-page-section {
-    padding-top: 50px; /* Add space below navbar */
-    padding-bottom: 50px;
-    background-color: var(--nd-blue); /* Or inherit */
-    color: var(--nd-text-light);
-  }
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--nd-blue);
+  color: var(--nd-text-light);
+}
   
-  /* ============================ */
-  /* Introduction Section Styles */
-  /* ============================ */
+/* ===========================
+   INTRODUCTION SECTION
+   =========================== */
+
+/* Content row layout */
+.about-content-row {
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+/* Text column */
+.about-description {
+  text-align: left;
+}
+
+/* Section heading */
+.about-heading {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: var(--nd-white);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Gold text highlight */
+.gold-text {
+  color: var(--nd-gold);
+}
+
+/* Quote card */
+.quote-card {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: none !important;
+  padding: 1.5rem;
+  border-left: 5px solid var(--nd-gold) !important;
+  margin-bottom: 2rem;
+}
+
+/* Body text */
+.about-body-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--nd-text-light);
+  margin: 0;
+}
+  
+/* Text highlight styles */
+.highlight {
+  color: var(--nd-gold);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.about-body-text i {
+  font-style: normal;
+}
+
+/* Blockquote footer */
+.blockquote-footer {
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+/* Image styles */
+.about-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 950px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  padding-bottom: 10px;
+  animation: fadeInRight 1s ease-out forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(201, 151, 0, 0.3);
+}
+
+.about-img-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animation keyframes */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+  
+
+/* ===========================
+   HOBBIES SECTION
+   =========================== */
+
+.hobbies-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.hobbies-heading {
+  font-size: 1.8rem;
+  color: var(--nd-white);
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+/* Hobby icons container */
+.hobby-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Individual hobby icon */
+.hobby-icon {
+  color: var(--nd-gold);
+  font-size: 2.5rem;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.hobby-icon:hover {
+  transform: scale(1.2);
+  color: var(--nd-white);
+}
+
+/* ===========================
+   SKILLS & TOOLS SECTION
+   =========================== */
+
+.skillset-row, 
+.tools-row {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.skillset-heading, 
+.tools-heading {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: var(--nd-white);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Skills grid layout */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Skill card */
+.tech-card {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 151, 0, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  aspect-ratio: 1 / 1;
+}
+
+.tech-card:hover {
+  transform: scale(1.08);
+  border-color: var(--nd-gold);
+  background-color: rgba(201, 151, 0, 0.1);
+  box-shadow: 0 0 15px rgba(201, 151, 0, 0.4);
+}
+
+/* Technology icon */
+.tech-icon {
+  font-size: 3.5rem;
+  color: var(--nd-white);
+  margin-bottom: 0.5rem;
+}
+
+.tech-card:hover .tech-icon {
+  color: var(--nd-gold);
+}
+
+/* ===========================
+   RESPONSIVE STYLES
+   =========================== */
+
+/* Tablet (991px and below) */
+@media (max-width: 991px) {
+  /* About section */
   .about-content-row {
-    align-items: center; /* Vertically align text and image */
-    margin-bottom: 4rem; /* Space below the intro section */
+    flex-direction: column;
   }
   
   .about-description {
-    text-align: left;
-  }
-  
-  .about-heading {
-    font-size: 2.6rem;
-    font-weight: bold;
-    color: var(--nd-white);
-    margin-bottom: 1.5rem;
-    text-align: center; /* Center main heading */
-  }
-  
-  .gold-text { /* Reusable class for gold text */
-    color: var(--nd-gold);
-  }
-  
-  .quote-card {
-    background-color: rgba(255, 255, 255, 0.05) !important; /* Subtle card background */
-    border: none !important;
-    padding: 1.5rem;
-    border-left: 5px solid var(--nd-gold) !important; /* Gold accent border */
-    margin-bottom: 2rem; /* Space below card */
+    order: 2;
   }
   
   .about-body-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--nd-text-light);
-    margin: 0; /* Remove default paragraph margin inside card */
+    text-align: left;
   }
   
-  .highlight { /* Class for highlighted keywords */
-    color: var(--nd-gold);
-    font-weight: 600; /* Make highlight bold */
-    font-style: normal; /* Override default italic if using <i> */
-  }
-  .about-body-text i { /* Style parent <i> tag if used for Highlight */
-     font-style: normal;
-  }
-  
-  .blockquote-footer {
-    color: rgba(255, 255, 255, 0.6) !important;
-    margin-top: 1rem;
-    text-align: right;
+  .about-img-col {
+    order: 1;
+    margin-bottom: 30px;
   }
   
   .about-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 950px; /* Use your chosen larger size */
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-    padding-bottom: 10px;
-    /* --- ADD TRANSITION --- */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-height: 300px;
   }
   
-  /* --- ADD HOVER RULE --- */
-  .about-image:hover {
-    transform: scale(1.03); /* Slightly enlarge the image */
-    box-shadow: 0 8px 25px rgba(201, 151, 0, 0.3); /* Optional: Enhance shadow with ND Gold tint */
+  .about-heading,
+  .skillset-heading, 
+  .tools-heading {
+    font-size: 2.2rem;
   }
-  
-  /* --- Make sure other .about-img-col styles are present --- */
-  .about-img-col {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+}
 
-  /* ============================ */
-  /* Hobbies Section Styles       */
-  /* ============================ */
-  .hobbies-section {
-    margin-top: 3rem; /* Space above hobbies */
-    text-align: center; /* Center the heading and icon container */
-  }
-  
-  .hobbies-heading {
-    font-size: 1.8rem; /* Adjust size as needed */
-    color: var(--nd-white);
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-  }
-  
-  /* Container for the row of icons */
-  .hobby-icons {
-    display: flex; /* Arrange icons in a row */
-    justify-content: center; /* Center icons horizontally */
-    align-items: center;
-    gap: 2rem; /* Space between icons */
-    flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
-  }
-  
-  /* Individual hobby icon styling */
-  .hobby-icon {
-    color: var(--nd-gold); /* Use ND Gold for icons */
-    font-size: 2.5rem; /* Adjust base size (overrides size="2x" slightly for consistency) */
-    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; /* Smooth hover effect */
-  }
-  
-  .hobby-icon:hover {
-    transform: scale(1.2); /* Slightly enlarge on hover */
-    color: var(--nd-white); /* Change color on hover */
-  }
-  
-  
-  /* ============================ */
-  /* Skillset & Tools Grids       */
-  /* ============================ */
-  
-  .skillset-row, .tools-row {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  
-  .skillset-heading, .tools-heading {
-    font-size: 2.6rem;
-    font-weight: bold;
-    color: var(--nd-white);
-    margin-bottom: 3rem; /* More space below heading */
-    text-align: center;
-  }
-  
-  .tech-grid {
-    display: grid;
-    /* Adjust columns for different screen sizes */
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Responsive columns */
-    gap: 1.5rem; /* Space between cards */
-    justify-content: center; /* Centers grid items if they don't fill the row */
-    max-width: 800px; /* Limit max width of grid */
-    margin: 0 auto; /* Center the grid container */
-    /* padding-left: 50px; */
-  }
-  
+/* Small tablets (767px and below) */
+@media (max-width: 767px) {
   .tech-card {
-    background-color: rgba(255, 255, 255, 0.06); /* Slightly lighter than pure blue */
-    border: 1px solid rgba(201, 151, 0, 0.3); /* Subtle gold border */
-    border-radius: 8px;
-    padding: 1.5rem 1rem; /* Padding inside card */
-    display: flex;
-    flex-direction: column; /* Stack icon and optional name */
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    aspect-ratio: 1 / 1; /* Make cards square */
-  }
-  
-  .tech-card:hover {
-    transform: scale(1.08); /* Scale up */
-    border-color: var(--nd-gold); /* Stronger gold border */
-    background-color: rgba(201, 151, 0, 0.1); /* Gold tint background */
-    box-shadow: 0 0 15px rgba(201, 151, 0, 0.4); /* Gold glow */
+    padding: 1.2rem 0.8rem;
   }
   
   .tech-icon {
-    font-size: 3.5rem; /* Large icon */
-    color: var(--nd-white); /* White icon */
-    margin-bottom: 0.5rem; /* Space below icon if name is added */
+    font-size: 3rem;
+  }
+}
+
+/* Mobile phones (576px and below) */
+@media (max-width: 576px) {
+  .about-page-section { 
+    padding: 60px 5%; 
   }
   
-  .tech-card:hover .tech-icon {
-    color: var(--nd-gold); /* Gold icon on hover */
+  .about-heading { 
+    font-size: 1.9rem; 
   }
   
-  /* Optional: Style for tech name if you add it */
-  /*
-  .tech-name {
-    font-size: 0.9rem;
-    color: var(--nd-text-light);
-    margin-top: 0.5rem;
-  }
-  */
-  
-  /* ============================ */
-  /* Responsive Adjustments       */
-  /* ============================ */
-  @media (max-width: 991px) { /* Tablet breakpoint */
-     .about-content-row {
-        flex-direction: column;
-     }
-     .about-description {
-        order: 2; /* Text below avatar */
-     }
-      .about-body-text {
-        text-align: left; /* Keep paragraph text left-aligned */
-      }
-     .myAvtar { /* Renamed from about-img-col to match component? No, it's the Col class */
-        order: 1;
-        margin-bottom: 30px; /* Space below avatar */
-     }
-     .about-image {
-        max-height: 300px;
-     }
-     .home-about-heading { /* From Home2 example, use .about-heading */
-        font-size: 2.2rem;
-     }
-      .skillset-heading, .tools-heading {
-       font-size: 2.2rem;
-     }
+  .about-image {
+    max-height: 220px;
   }
   
-  @media (max-width: 767px) { /* Smaller tablet / Large phone breakpoint */
-    .hobbies-list li {
-      display: block; /* Stack hobbies */
-      margin: 0.5rem 0;
-    }
-    .skill-item, /* .skill-item was from previous list example, now using .tech-card */
-    .tech-card {
-      padding: 1.2rem 0.8rem;
-    }
-    .tech-icon {
-      font-size: 3rem;
-    }
+  .about-body-text { 
+    font-size: 1rem; 
   }
   
-  
-  @media (max-width: 576px) { /* Phone breakpoint */
-    .about-page-section { padding: 60px 5%; }
-    .about-heading { font-size: 1.9rem; }
-    .avatar-image-custom, /* Refers to Image component in Home2 example, use .about-image */
-    .about-image {
-       max-height: 220px; /* Smaller image */
-    }
-    .about-body-text { font-size: 1rem; }
-    .skillset-heading, .tools-heading { font-size: 1.8rem; }
-    .tech-grid {
-       grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); /* Adjust grid for small screens */
-       gap: 1rem;
-     }
-    .tech-card { padding: 1rem 0.5rem; }
-    .tech-icon { font-size: 2.5rem; }
+  .skillset-heading, 
+  .tools-heading { 
+    font-size: 1.8rem; 
   }
+  
+  .tech-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 1rem;
+  }
+  
+  .tech-card {
+    padding: 1rem 0.5rem;
+  }
+  
+  .tech-icon {
+    font-size: 2.5rem;
+  }
+  
+  .hobby-icons {
+    gap: 1.5rem;
+  }
+  
+  .hobby-icon {
+    font-size: 2rem;
+  }
+}

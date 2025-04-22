@@ -1,3 +1,109 @@
-.d-flex{
-    padding-bottom: 50px;
+/* Resume Section Styling */
+.resume-section {
+  padding: 5rem 0;
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Resume Card */
+.resume-download-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.resume-download-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Resume Icon */
+.resume-icon {
+  color: var(--nd-gold);
+  margin-bottom: 1.5rem;
+}
+
+/* Headings */
+.resume-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--nd-white);
+  font-family: "Merriweather", serif;
+}
+
+.highlight-text {
+  color: var(--nd-gold);
+  font-style: italic;
+}
+
+.resume-text {
+  color: var(--nd-text-light);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Resume Preview */
+.resume-preview {
+  max-width: 300px;
+  margin: 0 auto 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.resume-preview:hover {
+  transform: scale(1.05);
+}
+
+.resume-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Download Button */
+.download-btn {
+  display: inline-block;
+  background-color: var(--nd-gold);
+  color: var(--nd-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(201, 151, 0, 0.3);
+  font-size: 1.1rem;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(201, 151, 0, 0.4);
+  background-color: #e6ac00; /* Slightly lighter gold */
+  color: var(--nd-blue);
+  text-decoration: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 3rem 0;
+  }
+  
+  .resume-download-card {
+    padding: 2rem 1rem;
+  }
+  
+  .resume-heading {
+    font-size: 2rem;
+  }
+  
+  .resume-text {
+    font-size: 1rem;
+  }
 }

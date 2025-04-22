@@ -2,9 +2,9 @@ import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import avatarImg from '/imgs/xjb-port.jpg';
+import avatarImg from '/imgs/WMP_Gh.png';
 import "./Home.css";
-// Particle component is now in App.jsx and applies to all pages
+
 
 function Home2() {
   const Highlight = ({ children }) => <i className="highlight">{children}</i>;

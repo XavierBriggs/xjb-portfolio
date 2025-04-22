@@ -1,24 +1,21 @@
-// src/pages/About.jsx (or wherever this component lives)
 import React from "react";
 import { Container, Row, Col, Image, Card } from "react-bootstrap";
-// Import necessary icons from react-icons
 import {
-  DiJavascript1, DiReact, DiNodejsSmall, DiPython, DiGit, DiCss3, DiHtml5, DiVisualstudio, DiGithub, DiMongodb
+  DiJavascript1, DiReact, DiNodejsSmall, DiPython, DiGit, DiHtml5, DiVisualstudio, DiGithub, DiMongodb
 } from 'react-icons/di';
 import {
   SiFlask, SiFlutter, SiOpenai, SiC, SiLinux, SiVim
 } from 'react-icons/si';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketballBall, faGamepad, faDog } from '@fortawesome/free-solid-svg-icons';
-// Particle component is now in App.jsx and applies to all pages
 
-import './styles/About.css'; // Make sure this path matches your project
+import './styles/About.css';
 
 const Highlight = ({ children }) => <span className="highlight">{children}</span>;
 
 function About() {
   const skills = [
-    { icon: <SiC />, name: "C/C++"},
+    { icon: <SiC />, name: "C/C++" },
     { icon: <DiPython />, name: "Python" },
     { icon: <DiJavascript1 />, name: "JavaScript" },
     { icon: <DiReact />, name: "React.js" },
@@ -26,9 +23,8 @@ function About() {
     { icon: <SiFlask />, name: "Flask" },
     { icon: <SiFlutter />, name: "Flutter" },
     { icon: <SiOpenai />, name: "OpenAI API" },
-    // { icon: <DiCss3 />, name: "CSS" },
     { icon: <DiHtml5 />, name: "HTML" },
-    {icon: <DiMongodb />, name: "Mongodb"}
+    { icon: <DiMongodb />, name: "MongoDB" }
   ];
 
   const tools = [
@@ -36,7 +32,7 @@ function About() {
     { icon: <DiGit />, name: "Git" },
     { icon: <SiLinux />, name: "Linux" },
     { icon: <SiVim />, name: "VIM" },
-    { icon: <DiGithub />, name: "Github"}
+    { icon: <DiGithub />, name: "GitHub" }
   ];
 
   return (
