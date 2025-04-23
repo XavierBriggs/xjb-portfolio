@@ -4,7 +4,7 @@ const projects = [
     title: "March Madness Predictor", 
     content: "A machine learning model that analyzes historical NCAA basketball data to predict tournament outcomes. Incorporates team statistics, historical performance, and player metrics to generate accurate predictions.",
     img: "/imgs/convert.webp",
-    url: "",
+    url: "https://github.com/XavierBriggs/Madness-Predictor",
     technologies: ["Python", "Machine Learning", "Data Analysis", "Neural Networks"]
   },
   {
